@@ -1,8 +1,17 @@
+
+
+
+--Andrea Mejia 192310177
+
+--Juego de TIC TAC TOE
+----------------------------------------------------------------------------------------------------------------------------------------------
+--Se hace el uso de las librerias
 import Data.List
 import System.IO 
 
 
 --Definir la constante: Es el maximo nivel de profundidad del arbol de analisis del juego. Cuanto mayor sea la profundidadDeBusqueda, mejor juega el computador pero su velocidad es menor.
+--Por defecto es 6
 profundidadDeBusqueda :: Int
 profundidadDeBusqueda = 6
 
@@ -138,6 +147,8 @@ muestraTablero t =
     muestraLinea t [4..6] ++ "\n-+-+-\n" ++
     muestraLinea t [7..9]
 
+
+----------------------------------------------------------------------------------------------------------------------------------------------
 --Definir la función que controle el juego siguiendo los siguientes pasos:
 --1. Activa la escritura inmediata en la pantalla.
 --    2. Escribe el nombre del juego.
@@ -160,6 +171,11 @@ main = do
     if head l `elem` ['s','S']
         then humano tableroInicial
         else computadora tableroInicial
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 --Definir la funcion tal que (humano t) realiza el movimiento del jugador humano a partir del tablero t. Consta de los siguientes pasos:
 -- Ejercicio 28. Definir la función
@@ -192,7 +208,9 @@ humano t = do
         else if (completo t')
                 then putStrLn "Empate."
             else computadora t'
-            
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
 --Definir la funcion tal que (computadora t) realiza el movimiento de la computadora a partir del tablero t. Consta de los siguientes pasos:
 --    1. Escribe la jugada de la computadora 
 --    2. Calcula el tablero t' correspondiente al mejor movimiento en
